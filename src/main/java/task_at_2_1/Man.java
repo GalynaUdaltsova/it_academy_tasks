@@ -5,14 +5,14 @@ public class Man extends Human {
     private double salary;
 
     public Man(String firstName, String lastName, int age, String car, double salary) {
-        super(firstName, lastName, age, Gender.MALE);
+        super(firstName, lastName, age);
         this.car = car;
         this.salary = salary;
     }
 
     @Override
     public void doAction() {
-        System.out.println("I drive a car: " + this.car);
+        System.out.println("The man drives a car: " + this.car);
     }
 
     public String getCar() {
@@ -34,7 +34,10 @@ public class Man extends Human {
     @Override
     public String toString() {
         return "Man{" +
-                "car='" + car + '\'' +
+                "firstName='" + super.firstName + '\'' +
+                ", lastName='" + super.lastName + '\'' +
+                ", age=" + super.age + '\'' +
+                ", car='" + car + '\'' +
                 ", salary=" + salary +
                 '}';
     }

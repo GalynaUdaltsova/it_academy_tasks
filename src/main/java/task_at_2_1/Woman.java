@@ -1,21 +1,21 @@
 package task_at_2_1;
 
 public class Woman extends Human {
-    public static final String WOMAN_DAY_DATE = "8th of March";
+    private static final String WOMAN_DAY_DATE = "8th of March";
 
     private static HolidayStatus holidayStatus;
     private String lipstickColor;
-    private int BagsCount;
+    private int bagsCount;
 
     public Woman(String firstName, String lastName, int age, String lipstickColor, int bagsCount) {
-        super(firstName, lastName, age, Gender.FEMALE);
+        super(firstName, lastName, age);
         this.lipstickColor = lipstickColor;
-        BagsCount = bagsCount;
+        this.bagsCount = bagsCount;
     }
 
     @Override
     public void doAction() {
-        System.out.println("Painting the lips into " + this.lipstickColor + " color...");
+        System.out.println("The woman is painting lips " + this.lipstickColor + " color...");
     }
 
     public static void updateHolidayStatus(HolidayStatus newHolidayStatus) {
@@ -26,7 +26,7 @@ public class Woman extends Human {
     }
 
     public void showHolidayStatus() {
-        System.out.println(holidayStatus + " " + WOMAN_DAY_DATE);
+        System.out.println(holidayStatus + " holiday: " + WOMAN_DAY_DATE);
     }
 
     public String getLipstickColor() {
@@ -38,18 +38,21 @@ public class Woman extends Human {
     }
 
     public int getBagsCount() {
-        return BagsCount;
+        return bagsCount;
     }
 
     public void setBagsCount(int bagsCount) {
-        BagsCount = bagsCount;
+        this.bagsCount = bagsCount;
     }
 
     @Override
     public String toString() {
         return "Woman{" +
-                "lipstickColor='" + lipstickColor + '\'' +
-                ", BagsCount=" + BagsCount +
+                "firstName='" + super.firstName + '\'' +
+                ", lastName='" + super.lastName + '\'' +
+                ", age=" + super.age + '\'' +
+                ", lipstickColor='" + lipstickColor + '\'' +
+                ", BagsCount=" + bagsCount +
                 '}';
     }
 }
