@@ -2,8 +2,8 @@ package task_at_2_1;
 
 public class Woman extends Human {
     private static final String WOMAN_DAY_DATE = "8th of March";
-
     private static HolidayStatus holidayStatus;
+
     private String lipstickColor;
     private int bagsCount;
 
