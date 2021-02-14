@@ -1,14 +1,24 @@
-package task_at_2_2;
+package task_at_2_2.models;
 
-public class Vegetables {
+public class Vegetable {
+    protected VegetableName vegetableName;
     protected int calories;
     protected int weight;
     protected String color;
 
-    public Vegetables(int calories, int weight, String color) {
+    public Vegetable(VegetableName vegetableName, int calories, int weight, String color) {
+        this.vegetableName = vegetableName;
         this.calories = calories;
         this.weight = weight;
         this.color = color;
+    }
+
+    public VegetableName getVegetableName() {
+        return vegetableName;
+    }
+
+    public void setVegetableName(VegetableName vegetableName) {
+        this.vegetableName = vegetableName;
     }
 
     public int getCalories() {
@@ -38,6 +48,7 @@ public class Vegetables {
     @Override
     public String toString() {
         return "Vegetables{" +
+                "vegetableName='" + vegetableName + '\'' +
                 "calories='" + calories + '\'' +
                 ", weight='" + weight + '\'' +
                 ", color='" + color + '\'' +
