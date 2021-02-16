@@ -1,6 +1,4 @@
-package task_at_2_2;
-
-import task_at_2_2.models.VegetableName;
+package task_at_2_2_add.models;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +12,22 @@ public enum Recipe {
 
     Recipe(String title, List<VegetableName> vegetableNames) {
         this.title = title;
+        this.vegetableNames = vegetableNames;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<VegetableName> getVegetableNames() {
+        return vegetableNames;
+    }
+
+    public void setVegetableNames(List<VegetableName> vegetableNames) {
         this.vegetableNames = vegetableNames;
     }
 }
