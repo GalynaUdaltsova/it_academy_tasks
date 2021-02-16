@@ -6,4 +6,12 @@ public class Tomato extends Vegetable {
         super(VegetableName.TOMATO, calories, weight, color);
     }
 
+    @Override
+    public String toString() {
+        return "Tomato{" +
+                "calories=" + super.calories +
+                ", weight=" + super.weight +
+                ", color='" + super.color + '\'' +
+                '}';
+    }
 }

@@ -1,10 +1,12 @@
 package task_at_2_2.models;
 
+import java.util.Objects;
+
 public class Vegetable {
-    protected VegetableName vegetableName;
-    protected int calories;
-    protected int weight;
-    protected String color;
+    VegetableName vegetableName;
+    int calories;
+    int weight;
+    String color;
 
     public Vegetable(VegetableName vegetableName, int calories, int weight, String color) {
         this.vegetableName = vegetableName;
@@ -46,11 +48,27 @@ public class Vegetable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vegetable)) return false;
+        Vegetable vegetable = (Vegetable) o;
+        return calories == vegetable.calories &&
+                weight == vegetable.weight &&
+                vegetableName == vegetable.vegetableName &&
+                Objects.equals(color, vegetable.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(vegetableName, calories, weight, color);
+    }
+
+    @Override
     public String toString() {
-        return "Vegetables{" +
+        return "Vegetable{" +
                 "vegetableName='" + vegetableName + '\'' +
-                "calories='" + calories + '\'' +
-                ", weight='" + weight + '\'' +
+                ", calories=" + calories +
+                ", weight=" + weight +
                 ", color='" + color + '\'' +
                 '}';
     }

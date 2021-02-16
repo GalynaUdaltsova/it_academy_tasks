@@ -1,29 +1,44 @@
 package task_at_2_2.models;
 
+import java.util.Objects;
+
 public class Cucumber extends Vegetable {
-    private String cucumberType;
+    private String type;
 
-    public Cucumber(int calories, int weight, String color, String cucumberType) {
+    public Cucumber(int calories, int weight, String color, String type) {
         super(VegetableName.CUCUMBER, calories, weight, color);
-        this.cucumberType = cucumberType;
+        this.type = type;
     }
 
-    public String getCucumberType() {
-        return cucumberType;
+    public String getType() {
+        return type;
     }
 
-    public void setCucumberType(String cucumberType) {
-        this.cucumberType = cucumberType;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cucumber)) return false;
+        if (!super.equals(o)) return false;
+        Cucumber cucumber = (Cucumber) o;
+        return Objects.equals(type, cucumber.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type);
     }
 
     @Override
     public String toString() {
         return "Cucumber{" +
-                "vegetableName='" + super.vegetableName + '\'' +
-                "calories=" + super.calories + '\'' +
-                ", weight=" + super.weight + '\'' +
+                "calories='" + super.calories + '\'' +
+                ", weight='" + super.weight + '\'' +
                 ", color='" + super.color + '\'' +
-                ", cucumberType=" + cucumberType + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
