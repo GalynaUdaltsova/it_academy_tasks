@@ -1,9 +1,9 @@
 package task_at_2_1;
 
 public abstract class Human {
-    protected String firstName;
-    protected String lastName;
-    protected int age;
+    String firstName;
+    String lastName;
+    int age;
 
     public Human(String firstName, String lastName, int age) {
         this.firstName = firstName;

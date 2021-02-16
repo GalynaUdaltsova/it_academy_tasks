@@ -1,8 +1,6 @@
-import task_at_2_1.HolidayStatus;
-import task_at_2_1.Man;
-import task_at_2_1.Woman;
+package task_at_2_1;
 
-public class TasksTest {
+public class TaskTest {
     public static void main(String[] args) {
         System.out.println("Create classes of Men and Women that have common characteristics " +
                 "(e.g. height, weight, hair color, etc.). Limit access to variables from outside - " +
