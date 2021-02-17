@@ -1,8 +1,8 @@
 package task_at_2_1;
 
 public abstract class Human {
-    String firstName;
-    String lastName;
+    protected String firstName;
+    protected String lastName;
     int age;
 
     public Human(String firstName, String lastName, int age) {
