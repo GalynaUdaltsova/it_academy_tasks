@@ -3,10 +3,10 @@ package task_at_2_2.models;
 import java.util.Objects;
 
 public class Vegetable {
-    VegetableName vegetableName;
-    int calories;
-    int weight;
-    String color;
+    protected VegetableName vegetableName;
+    protected int calories;
+    protected int weight;
+    protected String color;
 
     public Vegetable(VegetableName vegetableName, int calories, int weight, String color) {
         this.vegetableName = vegetableName;
