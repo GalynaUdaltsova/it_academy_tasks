@@ -18,14 +18,14 @@ public class Woman extends Human {
         System.out.println("The woman is painting lips " + this.lipstickColor + " color...");
     }
 
-    public static void updateHolidayStatus(HolidayStatus newHolidayStatus) {
+    public void updateHolidayStatus(HolidayStatus newHolidayStatus) {
         if (newHolidayStatus == null){
             throw new IllegalArgumentException("Holiday status can not be null");
         }
         holidayStatus = newHolidayStatus;
     }
 
-    public void showHolidayStatus() {
+    public static void showHolidayStatus() {
         System.out.println(holidayStatus + " holiday: " + WOMAN_DAY_DATE);
     }
 

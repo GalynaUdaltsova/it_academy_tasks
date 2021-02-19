@@ -15,8 +15,8 @@ public class TaskTest {
         Man ivanovIvan = new Man("Ivan", "Ivanov", 30, "KIA", 3000);
         ivanovaIlona.doAction();
         ivanovIvan.doAction();
-        Woman.updateHolidayStatus(HolidayStatus.SOON);
-        ivanovaIlona.showHolidayStatus();
+        ivanovaIlona.updateHolidayStatus(HolidayStatus.SOON);
+        Woman.showHolidayStatus();
         System.out.println(ivanovIvan);
         System.out.println(ivanovaIlona);
 
