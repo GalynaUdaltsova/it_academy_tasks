@@ -36,6 +36,7 @@ public class ChiefService {
         }
         if (!salad.remove(vegetable)) {
             System.out.println("This vegetable is not in the salad");
+            return;
         }
         System.out.println(String.format("The %s is removed", vegetable.getVegetableName()));
     }
@@ -60,19 +61,15 @@ public class ChiefService {
     }
 
     public void showVegetablesByColor(String color) {
-        for (Vegetable vegetable : salad) {
-            if (vegetable.getColor().equalsIgnoreCase(color)) {
-                System.out.println("\nFound the following vegetables with this color: " + vegetable);
-            }
-        }
+        salad.stream()
+                .filter(vegetable -> color.equalsIgnoreCase(vegetable.getColor()))
+                .forEach(System.out::println);
     }
 
     public void showVegetablesByWeightRange(int minWeight, int maxWeight) {
-        for (Vegetable vegetable : salad) {
-            if (vegetable.getWeight() > minWeight && vegetable.getWeight() < maxWeight) {
-                System.out.println(vegetable);
-            }
-        }
+        salad.stream()
+                .filter(vegetable -> minWeight < vegetable.getWeight() && maxWeight > vegetable.getWeight())
+                .forEach(System.out::println);
     }
 
     public void compareTwoVegetables(Vegetable vegetableOne, Vegetable vegetableTwo) {
@@ -85,8 +82,6 @@ public class ChiefService {
 
     private void printSalad(String message) {
         System.out.println("\n" + message);
-        for (Vegetable vegetable : salad) {
-            System.out.println(vegetable);
-        }
+        salad.forEach(System.out::println);
     }
 }
